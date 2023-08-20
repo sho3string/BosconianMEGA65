@@ -558,6 +558,7 @@ begin
           DDRAM_WE       => ddram_we,
           DDRAM_RD       => open
       ); -- i_screen_rotate
+      
 
    -- Here G_ADDR_WIDTH is determined by the total number of visible pixels,
    -- since each word in memory stores one pixel.
@@ -652,48 +653,97 @@ begin
 
       case qnice_dev_id_i is
 
---rom1_cs  <= '1' when dn_addr(15 downto 14) = "00"     else '0'; -- 16k
---rom2_cs  <= '1' when dn_addr(15 downto 12) = "0100"   else '0'; -- 4k
---rom3_cs  <= '1' when dn_addr(15 downto 12) = "0101"   else '0'; -- 4k
---roms_cs  <= '1' when dn_addr(15 downto 13) = "011"    else '0'; -- 8k
---romb_cs  <= '1' when dn_addr(15 downto 13) = "100"    else '0'; -- 8k
---rom51_cs <= '1' when dn_addr(15 downto 10) = "101000" else '0'; -- 1k
---rom54_cs <= '1' when dn_addr(15 downto 10) = "101001" else '0'; -- 1k
 
-         -- Galaga ROMSs
-         when C_DEV_GAL_CPU_ROM1 =>
+-- CPU Program ROMs
+--rom1_wren      <= '1' when dn_wr = '1' and dn_addr(15 downto 14) = "00"       else '0';
+--rom2_wren      <= '1' when dn_wr = '1' and dn_addr(15 downto 13) = "010"      else '0';
+--rom3_wren      <= '1' when dn_wr = '1' and dn_addr(15 downto 12) = "0110"     else '0';
+-- Namco Character/Sprite Layout ROMs
+--romchar_wren   <= '1' when dn_wr = '1' and dn_addr(15 downto 12) = "0111"     else '0';
+--romsprite_wren <= '1' when dn_wr = '1' and dn_addr(15 downto 12) = "1000"     else '0';
+-- ROMs for digitized speech; used by 52xx
+--romvoice0_wren <= '1' when dn_wr = '1' and dn_addr(15 downto 12) = "1010"     else '0';
+--romvoice1_wren <= '1' when dn_wr = '1' and dn_addr(15 downto 12) = "1011"     else '0';
+--romvoice2_wren <= '1' when dn_wr = '1' and dn_addr(15 downto 12) = "1100"     else '0';
+-- Namco custom MCU ROMs
+--rom50_wren     <= '1' when dn_wr = '1' and dn_addr(15 downto 11) = "11010"    else '0';
+--rom51_wren     <= '1' when dn_wr = '1' and dn_addr(15 downto 10) = "110110"   else '0';
+--rom52_wren     <= '1' when dn_wr = '1' and dn_addr(15 downto 10) = "110111"   else '0';
+--rom54_wren     <= '1' when dn_wr = '1' and dn_addr(15 downto 10) = "111000"   else '0';
+-- Color lookup table PROM
+--romcolor_wren  <= '1' when dn_wr = '1' and dn_addr(15 downto  8) = "11100100" else '0';
+-- Radar layout ROM
+--romradar_wren  <= '1' when dn_wr = '1' and dn_addr(15 downto  8) = "11100101" else '0';
+
+         -- Bosconian ROM
+         when C_DEV_BOS_CPU_ROM1 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "00" & qnice_dev_addr_i(13 downto 0);    -- rom1_cs
+              qnice_dn_addr <= "00" & qnice_dev_addr_i(13 downto 0);   
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
 
-         when C_DEV_GAL_CPU_ROM2 =>
+         when C_DEV_BOS_CPU_ROM2 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "0100" & qnice_dev_addr_i(11 downto 0);  -- rom2_cs
+              qnice_dn_addr <= "010" & qnice_dev_addr_i(12 downto 0);  
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
 
-         when C_DEV_GAL_CPU_ROM3 =>
+         when C_DEV_BOS_CPU_ROM3 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "0101" & qnice_dev_addr_i(11 downto 0);  -- rom3_cs
+              qnice_dn_addr <= "0110" & qnice_dev_addr_i(11 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0);
+              
+         when C_DEV_BOS_GFX1 =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "0111" & qnice_dev_addr_i(11 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0);
+              
+         when C_DEV_BOS_GFX2 =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "1000" & qnice_dev_addr_i(11 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0);
+             
+         when C_DEV_BOS_GFX3 =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "11100101" & qnice_dev_addr_i(7 downto 0); 
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
 
-         when C_DEV_GAL_GFX2 =>
+         when C_DEV_BOS_SPC1 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "011" & qnice_dev_addr_i(12 downto 0);   -- roms_cs
+              qnice_dn_addr <= "1010" & qnice_dev_addr_i(11 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0); 
+              
+         when C_DEV_BOS_SPC2 =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "1011" & qnice_dev_addr_i(11 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0); 
+              
+         when C_DEV_BOS_SPC3 =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "1100" & qnice_dev_addr_i(11 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0); 
+              
+         when C_DEV_BOS_MCU1 =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "11010" & qnice_dev_addr_i(10 downto 0); 
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
 
-         when C_DEV_GAL_GFX1 =>
+         when C_DEV_BOS_MCU2 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "100" & qnice_dev_addr_i(12 downto 0);   -- romb_cs
+              qnice_dn_addr <= "110110" & qnice_dev_addr_i(9 downto 0); 
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
-
-         when C_DEV_GAL_MCU1 =>
+              
+         when C_DEV_BOS_MCU3 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "101000" & qnice_dev_addr_i(9 downto 0); -- rom51_cs
+              qnice_dn_addr <= "110111" & qnice_dev_addr_i(9 downto 0); 
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
-
-         when C_DEV_GAL_MCU2 =>
+              
+         when C_DEV_BOS_MCU4 =>
               qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
-              qnice_dn_addr <= "101001" & qnice_dev_addr_i(9 downto 0); -- rom52_cs
+              qnice_dn_addr <= "111000" & qnice_dev_addr_i(9 downto 0); 
+              qnice_dn_data <= qnice_dev_data_i(7 downto 0);
+              
+         when C_DEV_BOS_VIDC =>
+              qnice_dn_wr   <= qnice_dev_ce_i and qnice_dev_we_i;
+              qnice_dn_addr <= "11100100" & qnice_dev_addr_i(7 downto 0); 
               qnice_dn_data <= qnice_dev_data_i(7 downto 0);
 
          when others => null;

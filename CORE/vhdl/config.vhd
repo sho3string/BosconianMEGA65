@@ -185,8 +185,8 @@ constant SEL_CFG_FILE      : std_logic_vector(15 downto 0) := x"0101";
 
 -- START YOUR CONFIGURATION BELOW THIS LINE
 
-constant DIR_START         : string := "/arcade/galaga";
-constant CFG_FILE          : string := "/arcade/galaga/glgcfg";
+constant DIR_START         : string := "/arcade/bosconian";
+constant CFG_FILE          : string := "/arcade/bosconian/boscfg";
 
 --------------------------------------------------------------------------------------------------------------------
 -- General configuration settings: Reset, Pause, OSD behavior, Ascal, etc. (Selector 0x0110)
@@ -286,9 +286,9 @@ constant SEL_OPTM_SINGLESEL   : std_logic_vector(15 downto 0) := x"0307";
 constant SEL_OPTM_MOUNT_STR   : std_logic_vector(15 downto 0) := x"0308";
 constant SEL_OPTM_DIMENSIONS  : std_logic_vector(15 downto 0) := x"0309";
 constant SEL_OPTM_SAVING_STR  : std_logic_vector(15 downto 0) := x"030A";
-constant SEL_OPTM_HELP        : std_logic_vector(15 downto 0) := x"0310";
-constant SEL_OPTM_CRTROM      : std_logic_vector(15 downto 0) := x"0311";
-constant SEL_OPTM_CRTROM_STR  : std_logic_vector(15 downto 0) := x"0312";
+constant SEL_OPTM_HELP        : std_logic_vector(15 downto 0) := x"030B";
+constant SEL_OPTM_CRTROM      : std_logic_vector(15 downto 0) := x"030C";
+constant SEL_OPTM_CRTROM_STR  : std_logic_vector(15 downto 0) := x"030D";
 
 -- !!! DO NOT TOUCH !!! Configuration constants for OPTM_GROUPS (shell.asm and menu.asm expect them to be like this)
 constant OPTM_G_TEXT       : integer := 0;                -- text that cannot be selected

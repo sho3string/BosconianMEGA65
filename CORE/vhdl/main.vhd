@@ -87,11 +87,7 @@ signal pause_cpu         : std_logic;
 signal status            : signed(31 downto 0);
 signal flip_screen       : std_logic;
 signal flip              : std_logic := '0';
-signal video_rotated     : std_logic;
-signal rotate_ccw        : std_logic := flip_screen;
-signal direct_video      : std_logic;
 signal forced_scandoubler: std_logic;
---signal no_rotate         : std_logic := status(2) OR direct_video;
 signal gamma_bus         : std_logic_vector(21 downto 0);
 signal audio             : std_logic_vector(15 downto 0);
 
@@ -159,7 +155,7 @@ begin
         end if;
     end process;
 
-    i_galaga : entity work.galaga
+    i_bosconian : entity work.bosconian
     port map (
     
     clock_18   => clk_main_i,
@@ -170,10 +166,10 @@ begin
     video_b    => video_blue_o,
     
     --video_csync => open,
-    video_hs    => video_hs_o,
-    video_vs    => video_vs_o,
-    blank_h     => video_hblank_o,
-    blank_v     => video_vblank_o,
+    video_hsync_n  => video_hs_o,
+    video_vsync_n  => video_vs_o,
+    video_hblank_n => video_hblank_o,
+    video_vblank_n => video_vblank_o,
     
     audio       => audio,
     
@@ -194,7 +190,6 @@ begin
     left2      => not joy_2_left_n_i,
     right2     => not joy_2_right_n_i,
     fire2      => not joy_2_fire_n_i,
-    flip_screen => flip_screen,
     
     -- dip a and b are labelled back to front in MiSTer core, hence this workaround.
     dip_switch_a    => not dsw_b_i,
@@ -203,10 +198,10 @@ begin
     v_offset   => status(31 downto 28),
     pause      => pause_cpu or pause_i,
    
-    hs_address => hs_address,
-    hs_data_out => hs_data_out,
-    hs_data_in => hs_data_in,
-    hs_write   => hs_write_enable,
+    --hs_address => hs_address,
+    --hs_data_out => hs_data_out,
+    --hs_data_in => hs_data_in,
+    --hs_write   => hs_write_enable,
     
     -- @TODO: ROM loading. For now we will hardcode the ROMs
     -- No dynamic ROM loading as of yet
