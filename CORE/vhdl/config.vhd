@@ -483,7 +483,7 @@ constant OPTM_GROUPS       : OPTM_GTYPE := ( OPTM_G_TEXT + OPTM_G_HEADLINE,     
                                              OPTM_G_LINE,                                               -- Line
                                              OPTM_G_TEXT + OPTM_G_HEADLINE,                             -- Headline "HDMI Mode""
                                              OPTM_G_LINE,                                               -- Line
-                                             OPTM_G_ROT90 + OPTM_G_SINGLESEL + OPTM_G_STDSEL,           -- Rotate On/Off toggle ("Single Select")
+                                             OPTM_G_ROT90 + OPTM_G_SINGLESEL,                           -- Rotate On/Off toggle ("Single Select")
                                              OPTM_G_FLIP  + OPTM_G_SINGLESEL,                           -- Flip   On/Off toggle ("Single Select")
                                              OPTM_G_CRT   + OPTM_G_SINGLESEL + OPTM_G_STDSEL,           -- CRT emulation On/Off toggle ("Single Select")
                                              OPTM_G_SUBMENU,                                            -- HDMI Settings Submenu start

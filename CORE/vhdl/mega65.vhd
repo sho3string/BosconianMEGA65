@@ -240,6 +240,9 @@ constant C_MENU_NAMCO_DSWA_6  : natural := 77;
 constant C_MENU_NAMCO_DSWA_7  : natural := 78;
 
 
+--signal rgb_out                : std_logic_vector(7 downto 0);
+
+
 -- Galaga specific video processing
 signal div                    : std_logic_vector(2 downto 0);
 signal dim_video              : std_logic;
@@ -460,12 +463,15 @@ begin
                 video_red   <= main_video_red   & main_video_red   & main_video_red(2 downto 1);
                 video_green <= main_video_green & main_video_green & main_video_green(2 downto 1);
                 video_blue  <= main_video_blue  & main_video_blue  & main_video_blue & main_video_blue;
+                
+                --rgb_out <= std_logic_vector(main_video_red) & std_logic_vector(main_video_green) & std_logic_vector(main_video_blue);
+                
             end if;
 
             video_hs     <= not main_video_hs;
-            video_vs     <= main_video_vs;
-            video_hblank <= main_video_hblank;
-            video_vblank <= main_video_vblank;
+            video_vs     <= not main_video_vs;
+            video_hblank <= not main_video_hblank;
+            video_vblank <= not main_video_vblank;
             video_de     <= not (main_video_hblank or main_video_vblank);
         end if;
     end process;
@@ -531,6 +537,37 @@ begin
     -- Nevertheless, on my VGA monitor, this video signal is recognized as
     -- 720x288 @ 50Hz.
 
+    /*
+    i_arcade_video : entity work.arcade_video
+    generic map (
+        WIDTH => 288,   -- screen width in pixels ( ROT90 )
+        DW    => 8,     -- each character is 8 pixels x 8 pixels
+        GAMMA => 0      -- @TODO: Deactivated to start with; we might need to reactivate later
+    )
+    port map (
+        clk_video          => video_clk,             -- video clock 48 MHz
+        ce_pix             => video_ce,
+        RGB_in             => rgb_out,
+        HBlank             => video_hblank_o,
+        VBlank             => video_vblank_o,
+        HSync              => video_hs,
+        VSync              => video_vs,
+        CLK_VIDEO_o        => video_clk_o,
+        CE_PIXEL           => video_ce_o,
+        VGA_R              => video_red_o,
+        VGA_G              => video_green_o,
+        VGA_B              => video_blue_o,
+        VGA_HS             => video_hs_o,
+        VGA_VS             => video_vs_o,
+        VGA_DE             => video_de,
+        VGA_SL             => open,                  -- @TODO: need to handle later
+        fx                 => 0, --status(5 downto 3),
+        forced_scandoubler => 0
+        --gamma_bus          => gamma_bus
+    ); -- i_arcade_video
+*/
+
+
     i_screen_rotate : entity work.screen_rotate
        port map (
           --inputs
@@ -586,7 +623,7 @@ begin
          video_hblank_o   => video_rot_hblank,
          video_vblank_o   => video_rot_vblank
       ); -- i_frame_buffer
-
+        
    ---------------------------------------------------------------------------------------------
    -- Audio and video settings (QNICE clock domain)
    ---------------------------------------------------------------------------------------------
