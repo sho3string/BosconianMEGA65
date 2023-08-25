@@ -197,35 +197,35 @@ constant C_MENU_NAMCO         : natural := 33;
 -- Midway DIPs
 -- Dipswitch B
 constant C_MENU_MIDWAY_DSWB_0 : natural := 38;
-constant C_MENU_MIDWAY_DSWB_1 : natural := 36;
-constant C_MENU_MIDWAY_DSWB_2 : natural := 34;
-constant C_MENU_MIDWAY_DSWB_3 : natural := 32;
-constant C_MENU_MIDWAY_DSWB_4 : natural := 30;
-constant C_MENU_MIDWAY_DSWB_5 : natural := 28;
-constant C_MENU_MIDWAY_DSWB_6 : natural := 26;
-constant C_MENU_MIDWAY_DSWB_7 : natural := 24;
+constant C_MENU_MIDWAY_DSWB_1 : natural := 39;
+constant C_MENU_MIDWAY_DSWB_2 : natural := 40;
+constant C_MENU_MIDWAY_DSWB_3 : natural := 41;
+constant C_MENU_MIDWAY_DSWB_4 : natural := 42;
+constant C_MENU_MIDWAY_DSWB_5 : natural := 43;
+constant C_MENU_MIDWAY_DSWB_6 : natural := 44;
+constant C_MENU_MIDWAY_DSWB_7 : natural := 45;
 
 -- Dipswitch A
 constant C_MENU_MIDWAY_DSWA_0 : natural := 47;
-constant C_MENU_MIDWAY_DSWA_1 : natural := 45;
-constant C_MENU_MIDWAY_DSWA_2 : natural := 43;
-constant C_MENU_MIDWAY_DSWA_3 : natural := 41;
-constant C_MENU_MIDWAY_DSWA_4 : natural := 39;
-constant C_MENU_MIDWAY_DSWA_5 : natural := 37;
-constant C_MENU_MIDWAY_DSWA_6 : natural := 35;
-constant C_MENU_MIDWAY_DSWA_7 : natural := 33;
+constant C_MENU_MIDWAY_DSWA_1 : natural := 48;
+constant C_MENU_MIDWAY_DSWA_2 : natural := 49;
+constant C_MENU_MIDWAY_DSWA_3 : natural := 50;
+constant C_MENU_MIDWAY_DSWA_4 : natural := 51;
+constant C_MENU_MIDWAY_DSWA_5 : natural := 52;
+constant C_MENU_MIDWAY_DSWA_6 : natural := 53;
+constant C_MENU_MIDWAY_DSWA_7 : natural := 54;
 
 
 -- Namco DIPs
 -- Dipswitch B
 constant C_MENU_NAMCO_DSWB_0  : natural := 60;
-constant C_MENU_NAMCO_DSWB_1  : natural := 58;
-constant C_MENU_NAMCO_DSWB_2  : natural := 56;
-constant C_MENU_NAMCO_DSWB_3  : natural := 54;
-constant C_MENU_NAMCO_DSWB_4  : natural := 52;
-constant C_MENU_NAMCO_DSWB_5  : natural := 50;
-constant C_MENU_NAMCO_DSWB_6  : natural := 48;
-constant C_MENU_NAMCO_DSWB_7  : natural := 56;
+constant C_MENU_NAMCO_DSWB_1  : natural := 61;
+constant C_MENU_NAMCO_DSWB_2  : natural := 62;
+constant C_MENU_NAMCO_DSWB_3  : natural := 63;
+constant C_MENU_NAMCO_DSWB_4  : natural := 64;
+constant C_MENU_NAMCO_DSWB_5  : natural := 65;
+constant C_MENU_NAMCO_DSWB_6  : natural := 66;
+constant C_MENU_NAMCO_DSWB_7  : natural := 67;
 
 -- Dipswitch A
 constant C_MENU_NAMCO_DSWA_0  : natural := 69;
@@ -239,10 +239,10 @@ constant C_MENU_NAMCO_DSWA_7  : natural := 76;
 
 
 -- Galaga specific video processing
-signal div                    : std_logic_vector(2 downto 0);
-signal dim_video              : std_logic;
-signal dsw_a_i                : std_logic_vector(7 downto 0);
-signal dsw_b_i                : std_logic_vector(7 downto 0);
+signal div          : std_logic_vector(2 downto 0);
+signal dim_video    : std_logic;
+signal dsw_a_i      : std_logic_vector(7 downto 0);
+signal dsw_b_i      : std_logic_vector(7 downto 0);
 
 signal video_ce     : std_logic;
 signal video_red    : std_logic_vector(7 downto 0);

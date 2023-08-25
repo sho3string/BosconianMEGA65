@@ -372,9 +372,9 @@ constant OPTM_ITEMS        : string :=
    " 0 - 2 Credits Game\n"  &
    " 1 - Difficulty A\n"    &
    " 2 - Difficulty B\n"    &
-   " 3 - Demo Sounds\n"     &
-   " 4 - Freeze\n"          &
-   " 5 - Rack Test\n"       &
+   " 3 - Allow Continue\n"  &
+   " 4 - Demo Sounds\n"     &
+   " 5 - Freeze\n"          &
    " 6 - Unused\n"          &
    " 7 - Cabinet Type\n"    &
    "\n"                     &
@@ -393,10 +393,10 @@ constant OPTM_ITEMS        : string :=
    "\n"                     &
    " 0 - Difficulty A\n"    &
    " 1 - Difficulty B\n"    &
-   " 2 - Unused\n"    		&
+   " 2 - Allow Continue\n"  &
    " 3 - Demo Sounds\n"     &
    " 4 - Freeze\n"          &
-   " 5 - Rack Test\n"       &
+   " 5 - Unused\n"          &
    " 6 - Unused\n"          &
    " 7 - Cabinet Type\n"    &
    "\n"                     &
