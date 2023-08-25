@@ -1,27 +1,24 @@
-Galaga for MEGA65 
-=================
+Bosconian: Star Destroyer for MEGA65 
+====================================
 
 done in 2023 by Muse
 	* Muse       github.com/sho3string
 	* sy2002     github.com/sy2002     www.sy2002.de
-    * MJoergen   github.com/MJoergen
+    	* MJoergen   github.com/MJoergen
 
-GalagaMEGA65 is licensed under the terms of GNU/GPL v3, for more information please read the file LICENSE
+BosconianMEGA65 is licensed under the terms of GNU/GPL v3, for more information please read the file LICENSE
 Parts of GalagaMEGA65 are licensed under other Free-software licenses as described in the source code
 
-GalagaMEGA65:
--------------
+BosconianMEGA65:
+----------------
 
-  GalagaMEGA65is a port of Arcade-Galaga_MiSTer
+  BosconianMEGA65 is a port of Arcade-Bosconian_MiSTer
       done by the MiSTer Development Team
-      Original GitHub Repository: https://github.com/MiSTer-devel/Arcade-Galaga_MiSTer
-      Significant contributors:
-      * sorgelig, blackwine & alanswx
-      * CONTRIBUTORS
-      * JimmyStones, MikeS11, hubertbanas, misteraddons, lagomorph, SerErris, eubrunosilva, wwark, MrX-8B & wesclemens
+      Original GitHub Repository: https://github.com/MiSTer-devel/Arcade-Bosconian_MiSTer
+      Contributors:
+      * NolanNicholson
 
-
-Other than that and my own work, GalagaMEGA65 uses:
+Other than that and my own work, BosconianMEGA65 uses:
 ---------------------------------------------------
 
   * MiSTer2MEGA65 by The MiSTer2MEGA65 Development Team
