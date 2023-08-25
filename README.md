@@ -1,5 +1,5 @@
-Bosconian for MEGA65
-====================
+Bosconian - Star Destroyer for MEGA65
+=====================================
 
 Bosconian is a classic arcade video game that was first released in 1981 by Namco. Developed during the golden age of arcade gaming, Bosconian stands out as an innovative and engaging space shooter that left a lasting impact on the gaming industry.
 
@@ -23,9 +23,50 @@ on-screen-menu.
 How to install the Bosconian core on your MEGA65
 ---------------------------------------------
 
-WIP
+1. **Download ROM**: Download the Galaga ROM ZIP file (do not unzip!) from
+  [this link](https://wowroms.com/en/roms/mame-0.37b5/bosconian/118286.html)
+  or search the web for "mame galaga midway set 1".
+
+2. **Download the Python script**: Download the provided Python script that
+   prepares the ROMs such that the Galaga core is able to use it from
+   [Link](https://github.com/sho3string/BosconianMEGA65/blob/master/bosconian_rom_installer.py).
+
+3. **Run the Python script**: Execute the Python script to create a folder
+   with the ROMs. 
+   Use the command `python bosconian_rom_installer.py <path to the zip file> <output_folder>`.
+
+   ROM files within the zip arhive are automatically evaluated for the correct SHA256 checksums.
+
+5. **Copy the ROMs to your MEGA65 SD card**: Copy the generated folder with
+   the ROMs to your MEGA65 SD card. You can use either the bottom SD card tray
+   of the MEGA65 or the tray at the backside of the computer (the latter has
+   precedence over the first).
+   The ROMs need to be in the folder `arcade/bosconian`.
+   
+   Copy the boscfg provided in 'arcade/galaga`.
+
+   The script supports the following versions of Bosconian. 
+
+   bosco             Bosconian - Star Destroyer (version 5)              (Namco, 1981)
+   boscomd           Bosconian - Star Destroyer (Midway, new version)    (Namco (Midway license), 1981)
+   
 
 7. **Setting up dip switches**
 
-WIP
+There are two dip switch banks of 8 switches on Bosconian boards which differ slightly between Namco and Midway versions.
+   
+   Namco 
+   [Link](http://www.arcaderestoration.com/gamedips/991/All/Bosconian.aspx)
+
+   Midway
+   Whilst I couldn't easily find DIP switch settings documented via the web, you can check the MAME driver ( boscomd )
+   for a description of each switch.
+   
+   We have provided menu items in the core to select between Namco & Midway dip configuration settings.
+   It is important to select the correct one after copying the files to /arcade/bosconian.
+
+   To do this, go to Game Setup after pressing the 'HELP' key, set your software version then set the individual
+   dip switches for that version in the dip section. Use the link above to understand what each switch is for.
+
+   Once done, press the reset switch on the MEGA65 to load the new settings.
     
