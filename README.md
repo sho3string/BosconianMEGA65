@@ -8,9 +8,9 @@ Bosconian is known for its unique gameplay mechanics that set it apart from othe
 The player's ship is equipped with both forward-firing lasers and torpedoes that can be launched backward. The dual firing options add a strategic layer to the gameplay, as players must carefully manage their ammunition and choose the right weapon for the situation. To advance through the levels, players must destroy specific enemy formations, destroy the enemy bases' core reactors, and avoid or eliminate the threats that come their way.
 
 This core is based on the
-[MiSTer](https://github.com/MiSTer-devel/Arcade-Bosconian_MiSTer)
+[MiSTer](https://github.com/https://github.com/MiSTer-devel/Arcade-Bosconian_MiSTer)
 Galaga core which
-itself is based on the work of [WIP).
+itself is based on the work of [many others](AUTHORS).
 
 [Muse aka sho3string](https://github.com/sho3string)
 ported the core to the MEGA65 in 2023.
