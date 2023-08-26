@@ -9,7 +9,7 @@ The player's ship is equipped with both forward-firing lasers and torpedoes that
 
 This core is based on the
 [MiSTer](https://github.com/https://github.com/MiSTer-devel/Arcade-Bosconian_MiSTer)
-Galaga core which
+Bosconianm core which
 itself is based on the work of [many others](AUTHORS).
 
 [Muse aka sho3string](https://github.com/sho3string)
@@ -23,12 +23,11 @@ on-screen-menu.
 How to install the Bosconian core on your MEGA65
 ---------------------------------------------
 
-1. **Download ROM**: Download the Galaga ROM ZIP file (do not unzip!) from
+1. **Download ROM**: Download the Bosconian ROM ZIP file (do not unzip!) from
   [this link](https://wowroms.com/en/roms/mame-0.37b5/bosconian/118286.html)
-  or search the web for "mame galaga midway set 1".
 
 2. **Download the Python script**: Download the provided Python script that
-   prepares the ROMs such that the Galaga core is able to use it from
+   prepares the ROMs such that the Bosconian core is able to use it from
    [Link](https://github.com/sho3string/BosconianMEGA65/blob/master/bosconian_rom_installer.py).
 
 3. **Run the Python script**: Execute the Python script to create a folder
@@ -43,7 +42,7 @@ How to install the Bosconian core on your MEGA65
    precedence over the first).
    The ROMs need to be in the folder `arcade/bosconian`.
    
-   Copy the boscfg provided in 'arcade/galaga`.
+   Copy the boscfg provided in 'arcade/bosconian`.
 
    The script supports the following versions of Bosconian. 
 
