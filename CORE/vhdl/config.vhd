@@ -88,7 +88,7 @@ constant SCR_WELCOME : string :=
    "Credits  : Press '5' or '6'\n"        & 
    "Start    : Press '1' or '2'\n"        &
    "Pause    : Press 'p'\n"               &
-   "Controls : Joy 1 or a,d, up_arrow\n"  &
+   "Controls : Joy 1 or arrows & space\n" &
    "Svc 1    : Press 's' \n"              &
    "Svc Mode : Caps-Lock on\n"            &
    "\n\n    Press Space to continue.\n"; 

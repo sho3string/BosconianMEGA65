@@ -121,9 +121,12 @@ constant m65_5             : integer := 16; --Insert coin 1
 constant m65_6             : integer := 19; --Insert coin 2
 
 -- Offer some keyboard controls in addition to Joy 1 Controls
-constant m65_a             : integer := 10; --Player left
-constant m65_d             : integer := 18; --Player right
-constant m65_up_crsr       : integer := 73; --Player fire
+constant m65_up_crsr       : integer := 73; --Player up
+constant m65_vert_crsr     : integer := 7;  --Player down
+constant m65_left_crsr     : integer := 74; --Player left
+constant m65_horz_crsr     : integer := 2;  --Player right
+constant m65_space         : integer := 60; --Fire
+
 
 -- Pause, credit button & test mode
 constant m65_p             : integer := 41; --Pause button
@@ -179,11 +182,11 @@ begin
     coin2      => not keyboard_n(m65_6),
     start1     => not keyboard_n(m65_1),
     start2     => not keyboard_n(m65_2),
-    up1        => not joy_1_up_n_i,
-    down1      => not joy_1_down_n_i,
-    left1      => not joy_1_left_n_i or not keyboard_n(m65_a),
-    right1     => not joy_1_right_n_i or not keyboard_n(m65_d),
-    fire1      => not joy_1_fire_n_i or not keyboard_n(m65_up_crsr),
+    up1        => not joy_1_up_n_i or not keyboard_n(m65_up_crsr),
+    down1      => not joy_1_down_n_i or not keyboard_n(m65_vert_crsr),
+    left1      => not joy_1_left_n_i or not keyboard_n(m65_left_crsr),
+    right1     => not joy_1_right_n_i or not keyboard_n(m65_horz_crsr),
+    fire1      => not joy_1_fire_n_i or not keyboard_n(m65_space),
     -- player 2 joystick is only active in cocktail/table mode.
     up2        => not joy_2_up_n_i,
     down2      => not joy_2_down_n_i,
