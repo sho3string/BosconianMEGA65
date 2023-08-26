@@ -47,26 +47,43 @@ How to install the Bosconian core on your MEGA65
 
    The script supports the following versions of Bosconian. 
 
-   bosco             Bosconian - Star Destroyer (version 5)              (Namco, 1981)
-   boscomd           Bosconian - Star Destroyer (Midway, new version)    (Namco (Midway license), 1981)
+   bosco             Bosconian - Star Destroyer (version 5)              (Namco, 1981)  
+   boscomd           Bosconian - Star Destroyer (Midway, new version)    (Namco (Midway license), 1981)  
+
+   I may add other versions of Bosconian to the install script later or you can do your own.
    
 
 7. **Setting up dip switches**
 
-There are two dip switch banks of 8 switches on Bosconian boards which differ slightly between Namco and Midway versions.
-   
-   Namco 
-   [Link](http://www.arcaderestoration.com/gamedips/991/All/Bosconian.aspx)
-
-   Midway
-   Whilst I couldn't easily find DIP switch settings documented via the web, you can check the MAME driver ( boscomd )
-   for a description of each switch.
-   
    We have provided menu items in the core to select between Namco & Midway dip configuration settings.
    It is important to select the correct one after copying the files to /arcade/bosconian.
 
    To do this, go to Game Setup after pressing the 'HELP' key, set your software version then set the individual
-   dip switches for that version in the dip section. Use the link above to understand what each switch is for.
+   dip switches for that version in the dip section. 
 
    Once done, press the reset switch on the MEGA65 to load the new settings.
+
+8. **Customising your game**
+
+  There are two dip switch banks of 8 switches on Bosconian boards which differ slightly between Namco and Midway versions.
+
+  Each switch facitates the ability to customise your game. For example, increasing or reducing the game difficulty.
+     
+     1. Namco [Link](http://www.arcaderestoration.com/gamedips/991/All/Bosconian.aspx)  
+  
+  Sample dip switch positions for Namco
+  
+  <img src="https://github.com/sho3string/BosconianMEGA65/assets/36328867/68739970-5544-4906-b97f-815071f5dd9c" width="219" height="304">  
+  
+     2. Midway  
+     Whilst I couldn't find DIP switch documentation via the web, you can check the MAME driver ( boscomd )
+     for a description of each switch. See below for a sample.
+  
+  Sample dip switch positions for Midway
+  
+  <img src="https://github.com/sho3string/BosconianMEGA65/assets/36328867/d4d07215-5fa9-43ca-b668-631a7a0163a4" width="219" height="304">  
+  
+  The above DIP configurations are the defaults used in the MEGA65 Core, so there is no need to configure these for the first time to start playing
+   
+   
     
