@@ -23,14 +23,15 @@ on-screen-menu.
 How to install the Bosconian core on your MEGA65
 ---------------------------------------------
 
-1. **Download ROM**: Download the Bosconian ROM ZIP file (do not unzip!) from
-  [this link](https://wowroms.com/en/roms/mame-0.37b5/bosconian/118286.html)
-
-2. **Download the Python script**: Download the provided Python script that
+1. **Download ROM**: Download the Bosconian MAME ROM ZIP file (do not unzip!) from the internet.
+   Search for bosco.zip or boscomd.zip. Some roms are not merged correctly so you may have
+   to search until you find one that works with the Python script below.
+ 
+3. **Download the Python script**: Download the provided Python script that
    prepares the ROMs such that the Bosconian core is able to use it from
    [Link](https://github.com/sho3string/BosconianMEGA65/blob/master/bosconian_rom_installer.py).
 
-3. **Run the Python script**: Execute the Python script to create a folder
+4. **Run the Python script**: Execute the Python script to create a folder
    with the ROMs. 
    Use the command `python bosconian_rom_installer.py <path to the zip file> <output_folder>`.
 
