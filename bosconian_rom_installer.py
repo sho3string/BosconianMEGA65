@@ -117,7 +117,7 @@ def main():
         print("This script supports the following versions of Bosconian.\n")
         print("bosco             Bosconian - Star Destroyer (version 5)            (Namco, 1981)")
         print("boscomd           Bosconian - Star Destroyer (Midway, new version)  (Namco (Midway license), 1981)")
-        print("For example, To run Middway version 5\n")
+        print("For example, To run Midway version 5\n")
         print("Download this ZIP file from : https://wowroms.com/en/roms/mame-0.139u1/Bosconian-midway-set-1/3707.html")
         print("Or search the web for: mame Bosconian midway version 5\n")
         print("Usage: script.py <path to the zip file> <output_folder>")
